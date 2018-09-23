@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { Link } from 'gatsby';
+import github from '../img/github-icon.svg';
+import logo from '../img/logo.svg';
 
 const Navbar = () => (
   <nav className="navbar is-transparent">
@@ -20,6 +20,9 @@ const Navbar = () => (
         <Link className="navbar-item" to="/products">
           Products
         </Link>
+        <Link className="navbar-item" to="/example">
+          Example
+        </Link>
       </div>
       <div className="navbar-end">
         <a
@@ -35,6 +38,6 @@ const Navbar = () => (
       </div>
     </div>
   </nav>
-)
+);
 
-export default Navbar
+export default Navbar;
