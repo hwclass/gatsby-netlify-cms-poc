@@ -26,6 +26,9 @@ const Navbar = () => (
         <Link className="navbar-item" to="/airport-service">
           Airport Service
         </Link>
+        <Link className="navbar-item" to="/mdx-page">
+          MDX Page
+        </Link>
       </div>
       <div className="navbar-end">
         <a
