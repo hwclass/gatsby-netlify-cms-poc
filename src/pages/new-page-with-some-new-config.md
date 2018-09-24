@@ -7,3 +7,5 @@ tags:
   - page
 ---
 New Page with Some New Config body here
+
+<BookingWidget/>
