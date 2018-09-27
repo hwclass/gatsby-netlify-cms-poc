@@ -1,10 +1,23 @@
+import React, { Component } from 'react';
 import CMS from 'netlify-cms';
+
+import { Control, Preview } from './preview-components/Header'
 
 import AboutPagePreview from './preview-templates/AboutPagePreview';
 import BlogPostPreview from './preview-templates/BlogPostPreview';
 import ProductPagePreview from './preview-templates/ProductPagePreview';
 import ExamplePagePreview from './preview-templates/ExamplePagePreview';
 import AirportServicePagePreview from './preview-templates/AirportServicePagePreview';
+
+CMS.registerPreviewStyle(
+  'https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css'
+)
+
+CMS.registerWidget(
+  'header',
+  Control,
+  Preview
+);
 
 CMS.registerPreviewTemplate('about', AboutPagePreview);
 CMS.registerPreviewTemplate('products', ProductPagePreview);
