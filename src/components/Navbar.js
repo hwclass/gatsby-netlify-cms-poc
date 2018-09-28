@@ -29,6 +29,9 @@ const Navbar = () => (
         <Link className="navbar-item" to="/mdx-page">
           MDX Page
         </Link>
+        <Link className="navbar-item" to="/some-title">
+          Some Title
+        </Link>
       </div>
       <div className="navbar-end">
         <a
