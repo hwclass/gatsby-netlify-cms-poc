@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CMS from 'netlify-cms';
 
 import { Control, Preview } from './preview-components/Header'
+import Header from 'ds-monorepo/packages/components/lib/Header';
 
 import AboutPagePreview from './preview-templates/AboutPagePreview';
 import BlogPostPreview from './preview-templates/BlogPostPreview';
@@ -49,6 +50,34 @@ CMS.registerEditorComponent({
   toPreview: function(obj) {
     return (
       '<img src="http://img.youtube.com/vi/' + obj.id + '/maxresdefault.jpg" alt="Youtube Video"/>'
+    );
+  }
+});
+
+CMS.registerEditorComponent({
+  // Internal id of the component
+  id: "header",
+  // Visible label
+  label: "header",
+  // Fields the user need to fill out when adding an instance of the component
+  fields: [{name: 'id', type: 'Header type', widget: 'string'}],
+  // Pattern to identify a block as being an instance of this component
+  pattern: /^youtube (\S+)$/,
+  // Function to extract data elements from the regexp match
+  fromBlock: function(match) {
+    return {
+      id: match[1]
+    };
+  },
+  // Function to create a text block from an instance of this component
+  toBlock: function(obj) {
+    return 'header ' + obj.id;
+  },
+  // Preview output for this component. Can either be a string or a React component
+  // (component gives better render performance)
+  toPreview: function(obj) {
+    return (
+      <Header/>
     );
   }
 });
